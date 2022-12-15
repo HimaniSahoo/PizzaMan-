@@ -1,0 +1,16 @@
+import { ADD_CART, REMOVE_CART, CLEAR_CART } from "./cart_types"
+
+const cartInitialState = {
+    numOfItems:0,
+    Carts: []
+}
+
+const cartReducer = (state=cartInitialState,action)=>{
+    switch(action.type){
+        case ADD_CART:return{...state,numOfItems:state.numOfItems+1}
+        case REMOVE_CART:return{...state,numOfItems:state.numOfItems-1}
+        case CLEAR_CART:return{...state,numOfItems:""}
+        default: return state
+    }
+}
+export {cartReducer}
